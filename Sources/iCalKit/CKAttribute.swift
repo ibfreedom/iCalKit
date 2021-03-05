@@ -141,11 +141,9 @@ public class CKAttribute {
         guard results.isEmpty == false else { return attrs }
         for result in results {
             let content = contents.hub.substring(with: result.range)
-            print("content", content)
             let pattern: String = #"(?<=\r\n)(X-|IANA-)([\s\S]*?)((?=:)|(?=;))"#
             let reg = try NSRegularExpression.init(pattern: pattern, options: [.caseInsensitive])
             guard let res = reg.firstMatch(in: content, options: [], range: content.hub.range) else {
-                print(content)
                 throw CKError.custom("Can not get attribiute name")
             }
             let name = content.hub.substring(with: res.range)

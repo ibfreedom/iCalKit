@@ -39,12 +39,12 @@ public class CKSerialization {
         while value.contains("  ") == true {
             value = value.replacingOccurrences(of: "  ", with: " ")
         }
-        value = value.replacingOccurrences(of: "\r\n ", with: "")
+        value = value.replacingOccurrences(of: "\r\n", with: "\n")
         value = value.replacingOccurrences(of: "\n ", with: "")
-        while value.contains("\r\n\r\n") {
-            value = value.replacingOccurrences(of: "\r\n\r\n", with: "\r\n")
+        while value.contains("\n\n") {
+            value = value.replacingOccurrences(of: "\n\n", with: "\n")
         }
-        value = value.replacingOccurrences(of: "\r\n", with: "\r\n\r\n")
+        value = value.replacingOccurrences(of: "\n", with: "\r\n\r\n")
         
         return try CKCalendar.calendars(from: &value)
     }
