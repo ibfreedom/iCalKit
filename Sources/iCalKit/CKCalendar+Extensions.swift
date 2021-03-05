@@ -63,11 +63,10 @@ extension CKCalendar {
             event.endDate = date(from: attr)
         }
         // GEO
-        if let attr = evt.attribute(for: .GEO) {
-            if #available(macOS 10.11, iOS 6.0, watchOS 2.0, *) {
-                event.structuredLocation?.geoLocation = geo(from: attr)
-            }
+        if #available(macOS 10.11, iOS 6.0, watchOS 2.0, *), let attr = evt.attribute(for: .GEO) {
+            event.structuredLocation?.geoLocation = geo(from: attr)
         }
+        
         /// EKCalendar
         event.calendar = store.defaultCalendarForNewEvents
         
