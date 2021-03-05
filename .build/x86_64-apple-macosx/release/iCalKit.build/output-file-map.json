@@ -1,0 +1,107 @@
+{
+  "": {
+    "dependencies": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/iCalKit.d",
+    "object": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/iCalKit.o",
+    "swift-dependencies": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/master.swiftdeps"
+  },
+  "/Users/tramp/Developer/Projects/iCalKit/Sources/iCalKit/CKAlarm.swift": {
+    "object": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/CKAlarm.swift.o",
+    "swiftmodule": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/CKAlarm~partial.swiftmodule",
+    "swift-dependencies": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/CKAlarm.swiftdeps"
+  },
+  "/Users/tramp/Developer/Projects/iCalKit/Sources/iCalKit/CKAttendee.swift": {
+    "object": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/CKAttendee.swift.o",
+    "swiftmodule": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/CKAttendee~partial.swiftmodule",
+    "swift-dependencies": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/CKAttendee.swiftdeps"
+  },
+  "/Users/tramp/Developer/Projects/iCalKit/Sources/iCalKit/CKAttribute.swift": {
+    "object": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/CKAttribute.swift.o",
+    "swiftmodule": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/CKAttribute~partial.swiftmodule",
+    "swift-dependencies": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/CKAttribute.swiftdeps"
+  },
+  "/Users/tramp/Developer/Projects/iCalKit/Sources/iCalKit/CKCalendar+Extensions.swift": {
+    "object": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/CKCalendar+Extensions.swift.o",
+    "swiftmodule": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/CKCalendar+Extensions~partial.swiftmodule",
+    "swift-dependencies": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/CKCalendar+Extensions.swiftdeps"
+  },
+  "/Users/tramp/Developer/Projects/iCalKit/Sources/iCalKit/CKCalendar.swift": {
+    "object": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/CKCalendar.swift.o",
+    "swiftmodule": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/CKCalendar~partial.swiftmodule",
+    "swift-dependencies": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/CKCalendar.swiftdeps"
+  },
+  "/Users/tramp/Developer/Projects/iCalKit/Sources/iCalKit/CKDaylight.swift": {
+    "object": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/CKDaylight.swift.o",
+    "swiftmodule": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/CKDaylight~partial.swiftmodule",
+    "swift-dependencies": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/CKDaylight.swiftdeps"
+  },
+  "/Users/tramp/Developer/Projects/iCalKit/Sources/iCalKit/CKEvent.swift": {
+    "object": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/CKEvent.swift.o",
+    "swiftmodule": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/CKEvent~partial.swiftmodule",
+    "swift-dependencies": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/CKEvent.swiftdeps"
+  },
+  "/Users/tramp/Developer/Projects/iCalKit/Sources/iCalKit/CKFreeBusy.swift": {
+    "object": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/CKFreeBusy.swift.o",
+    "swiftmodule": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/CKFreeBusy~partial.swiftmodule",
+    "swift-dependencies": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/CKFreeBusy.swiftdeps"
+  },
+  "/Users/tramp/Developer/Projects/iCalKit/Sources/iCalKit/CKJournal.swift": {
+    "object": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/CKJournal.swift.o",
+    "swiftmodule": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/CKJournal~partial.swiftmodule",
+    "swift-dependencies": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/CKJournal.swiftdeps"
+  },
+  "/Users/tramp/Developer/Projects/iCalKit/Sources/iCalKit/CKSerialization.swift": {
+    "object": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/CKSerialization.swift.o",
+    "swiftmodule": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/CKSerialization~partial.swiftmodule",
+    "swift-dependencies": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/CKSerialization.swiftdeps"
+  },
+  "/Users/tramp/Developer/Projects/iCalKit/Sources/iCalKit/CKStandard.swift": {
+    "object": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/CKStandard.swift.o",
+    "swiftmodule": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/CKStandard~partial.swiftmodule",
+    "swift-dependencies": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/CKStandard.swiftdeps"
+  },
+  "/Users/tramp/Developer/Projects/iCalKit/Sources/iCalKit/CKTimezone.swift": {
+    "object": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/CKTimezone.swift.o",
+    "swiftmodule": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/CKTimezone~partial.swiftmodule",
+    "swift-dependencies": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/CKTimezone.swiftdeps"
+  },
+  "/Users/tramp/Developer/Projects/iCalKit/Sources/iCalKit/CKTodo.swift": {
+    "object": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/CKTodo.swift.o",
+    "swiftmodule": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/CKTodo~partial.swiftmodule",
+    "swift-dependencies": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/CKTodo.swiftdeps"
+  },
+  "/Users/tramp/Developer/Projects/iCalKit/Sources/iCalKit/Others/CKError.swift": {
+    "object": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/Others/CKError.swift.o",
+    "swiftmodule": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/Others/CKError~partial.swiftmodule",
+    "swift-dependencies": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/Others/CKError.swiftdeps"
+  },
+  "/Users/tramp/Developer/Projects/iCalKit/Sources/iCalKit/Others/CKRegularable.swift": {
+    "object": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/Others/CKRegularable.swift.o",
+    "swiftmodule": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/Others/CKRegularable~partial.swiftmodule",
+    "swift-dependencies": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/Others/CKRegularable.swiftdeps"
+  },
+  "/Users/tramp/Developer/Projects/iCalKit/Sources/iCalKit/Others/CKTextable.swift": {
+    "object": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/Others/CKTextable.swift.o",
+    "swiftmodule": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/Others/CKTextable~partial.swiftmodule",
+    "swift-dependencies": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/Others/CKTextable.swiftdeps"
+  },
+  "/Users/tramp/Developer/Projects/iCalKit/Sources/iCalKit/Others/Compatible.swift": {
+    "object": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/Others/Compatible.swift.o",
+    "swiftmodule": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/Others/Compatible~partial.swiftmodule",
+    "swift-dependencies": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/Others/Compatible.swiftdeps"
+  },
+  "/Users/tramp/Developer/Projects/iCalKit/Sources/iCalKit/Others/NSLock+Hub.swift": {
+    "object": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/Others/NSLock+Hub.swift.o",
+    "swiftmodule": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/Others/NSLock+Hub~partial.swiftmodule",
+    "swift-dependencies": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/Others/NSLock+Hub.swiftdeps"
+  },
+  "/Users/tramp/Developer/Projects/iCalKit/Sources/iCalKit/Others/String+Hub.swift": {
+    "object": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/Others/String+Hub.swift.o",
+    "swiftmodule": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/Others/String+Hub~partial.swiftmodule",
+    "swift-dependencies": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/Others/String+Hub.swiftdeps"
+  },
+  "/Users/tramp/Developer/Projects/iCalKit/Sources/iCalKit/iCalKit.swift": {
+    "object": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/iCalKit.swift.o",
+    "swiftmodule": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/iCalKit~partial.swiftmodule",
+    "swift-dependencies": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/release/iCalKit.build/iCalKit.swiftdeps"
+  }
+}
