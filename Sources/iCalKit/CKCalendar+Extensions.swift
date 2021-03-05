@@ -21,7 +21,6 @@ extension CKCalendar {
         }
     }
   
-    
     /// convert CKEvent to EK Event
     /// - Parameters:
     ///   - evt: CKEvent
@@ -29,11 +28,11 @@ extension CKCalendar {
     /// - Throws: Error
     /// - Returns: EKEvent
     private func convert(evt: CKEvent, with store: EKEventStore) throws -> EKEvent {
-        guard let md5 = evt.attribute(for: .UID)?.value.hub.md5 else { throw CKError.custom("Can not get UID from CKEvent") }
+        guard evt.openUID.isEmpty == false else { throw CKError.custom("Can not get open UID from CKEvent") }
         let startDate = try self.startDate(for: evt)
         let predicate = store.predicateForEvents(withStart: startDate, end: startDate.addingTimeInterval(0.1), calendars: nil)
         let event: EKEvent
-        if let _event = store.events(matching: predicate).first(where: { $0.hasNotes == true && $0.notes?.contains(md5) == true }) {
+        if let _event = store.events(matching: predicate).first(where: { $0.hasNotes == true && $0.notes?.contains(evt.openUID) == true }) {
             event = _event
         } else {
             event = EKEvent.init(eventStore: store)
@@ -44,9 +43,9 @@ extension CKCalendar {
         }
         // 设置 notes
         if let notes = evt.attribute(for: .DESCRIPTION)?.value.replacingOccurrences(of: "\\r\\n", with: ""), notes.isEmpty == false {
-            event.notes = md5 + "\n" + notes
+            event.notes = evt.openUID + "\n" + notes
         } else {
-            event.notes = md5
+            event.notes = evt.openUID
         }
         // 设置位置信息
         if let location = evt.attribute(for: .LOCATION)?.value.replacingOccurrences(of: "\\r\\n", with: "") {

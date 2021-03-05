@@ -368,6 +368,16 @@ extension CKEvent {
     }
 }
 
+extension CKEvent {
+    
+    /// open UID
+    public var openUID: String {
+        guard let UID = attribute(for: .UID)?.value else { return "" }
+        return UID.hub.md5
+    }
+}
+
+
 // MARK: - CKTextable
 extension CKEvent: CKTextable {
     
