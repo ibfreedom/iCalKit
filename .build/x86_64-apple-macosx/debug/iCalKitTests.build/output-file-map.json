@@ -1,0 +1,17 @@
+{
+  "": {
+    "swift-dependencies": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/debug/iCalKitTests.build/master.swiftdeps"
+  },
+  "/Users/tramp/Developer/Projects/iCalKit/Tests/iCalKitTests/XCTestManifests.swift": {
+    "dependencies": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/debug/iCalKitTests.build/XCTestManifests.d",
+    "object": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/debug/iCalKitTests.build/XCTestManifests.swift.o",
+    "swiftmodule": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/debug/iCalKitTests.build/XCTestManifests~partial.swiftmodule",
+    "swift-dependencies": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/debug/iCalKitTests.build/XCTestManifests.swiftdeps"
+  },
+  "/Users/tramp/Developer/Projects/iCalKit/Tests/iCalKitTests/iCalKitTests.swift": {
+    "dependencies": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/debug/iCalKitTests.build/iCalKitTests.d",
+    "object": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/debug/iCalKitTests.build/iCalKitTests.swift.o",
+    "swiftmodule": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/debug/iCalKitTests.build/iCalKitTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/debug/iCalKitTests.build/iCalKitTests.swiftdeps"
+  }
+}

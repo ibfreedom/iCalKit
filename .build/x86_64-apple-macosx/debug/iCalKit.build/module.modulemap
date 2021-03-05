@@ -1,0 +1,4 @@
+module iCalKit {
+    header "/Users/tramp/Developer/Projects/iCalKit/.build/x86_64-apple-macosx/debug/iCalKit.build/iCalKit-Swift.h"
+    requires objc
+}
