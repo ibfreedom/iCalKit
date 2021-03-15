@@ -29,7 +29,7 @@ extension CKCalendar {
     /// - Returns: EKEvent
     private func convert(evt: CKEvent, with store: EKEventStore) throws -> EKEvent {
         guard evt.openUID.isEmpty == false else { throw CKError.custom("Can not get open UID from CKEvent") }
-        let startDate = try self.startDate(for: evt)
+        let startDate = try self.beginTime(for: evt)
         let predicate = store.predicateForEvents(withStart: startDate, end: startDate.addingTimeInterval(0.1), calendars: nil)
         let event: EKEvent
         if let _event = store.events(matching: predicate).first(where: { $0.hasNotes == true && $0.notes?.contains(evt.openUID) == true }) {
@@ -113,11 +113,11 @@ extension CKCalendar {
         return .init(latitude: latitude, longitude: longitude)
     }
     
-    /// start date for CKEvent
+    /// begin date for CKEvent
     /// - Parameter event: CKEvent
     /// - Throws: Error
     /// - Returns: Date
-    public func startDate(for event: CKEvent) throws -> Date {
+    public func beginTime(for event: CKEvent) throws -> Date {
         if let attr = event.component(for: .DTSTART), let date = date(from: attr) {
             return date
         } else if let attr = event.component(for: .DTSTAMP), let date = date(from: attr) {
@@ -125,5 +125,18 @@ extension CKCalendar {
         } else {
             throw CKError.custom("Can not get start date for CKEvent")
         }
+    }
+    
+    /// end time for CKEvent
+    /// - Parameter event: CKEvent
+    /// - Throws: Error
+    /// - Returns: Date
+    public func endTime(for event: CKEvent) throws -> Date {
+        if let attr = event.component(for: .DTEND), let date = date(from: attr) {
+            return date
+        } else {
+            throw CKError.custom("Can not get end date for CKEvent")
+        }
+        
     }
 }
