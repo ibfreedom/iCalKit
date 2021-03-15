@@ -1,5 +1,5 @@
 //
-//  CKAttribute.swift
+//  CKComponent.swift
 //  iCalendarKit
 //
 //  Created by tramp on 2021/3/3.
@@ -8,9 +8,8 @@
 import Foundation
 
 
-/// CKAttribute
-public class CKAttribute {
-    
+/// CKComponent
+public class CKComponent {
     
     // MARK: - 公开有属性
     
@@ -108,12 +107,12 @@ public class CKAttribute {
         self.attrs = attrs
     }
     
-    /// get attrs from ics string
+    /// get components from ics string
     /// - Parameter contents: String
     /// - Throws: String
-    /// - Returns: [CKAttribute]
-    internal static func attributes(from contents: inout String, withKeys keys: [CKRegularable]) throws -> [CKAttribute] {
-        var attrs: [CKAttribute] = []
+    /// - Returns: [CKComponent]
+    internal static func components(from contents: inout String, withKeys keys: [CKRegularable]) throws -> [CKComponent] {
+        var attrs: [CKComponent] = []
         for key in keys {
             let reg = try NSRegularExpression.init(pattern: key.pattern, options: [.caseInsensitive])
             if key.mutable == true {
@@ -121,14 +120,14 @@ public class CKAttribute {
                 guard results.isEmpty == false else { continue }
                 for result in results {
                     let content = contents.hub.substring(with: result.range)
-                    let attr = try CKAttribute.init(from: content, name: key.name)
+                    let attr = try CKComponent.init(from: content, name: key.name)
                     attrs.append(attr)
                     contents = contents.hub.remove(with: result.range)
                 }
             } else {
                 guard let result = reg.firstMatch(in: contents, options: [], range: contents.hub.range) else { continue }
                 let content = contents.hub.substring(with: result.range)
-                let attr = try CKAttribute.init(from: content, name: key.name)
+                let attr = try CKComponent.init(from: content, name: key.name)
                 attrs.append(attr)
                 contents = contents.hub.remove(with: result.range)
             }
@@ -147,7 +146,7 @@ public class CKAttribute {
                 throw CKError.custom("Can not get attribiute name")
             }
             let name = content.hub.substring(with: res.range)
-            let attr = try CKAttribute.init(from: content, name: name)
+            let attr = try CKComponent.init(from: content, name: name)
             attrs.append(attr)
             contents = contents.hub.remove(with: result.range)
         }
@@ -156,7 +155,7 @@ public class CKAttribute {
 }
 
 // MARK: - 属性相关
-extension CKAttribute {
+extension CKComponent {
     
     /// contains
     /// - Parameter attrKey: String
@@ -202,7 +201,7 @@ extension CKAttribute {
 }
 
 // MARK: - CKTextable
-extension CKAttribute: CKTextable {
+extension CKComponent: CKTextable {
     
     /// text with ics format
     public var text: String {

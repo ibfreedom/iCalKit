@@ -28,7 +28,7 @@ extension CKAttendee.Key {
 
 
 /// CKAttendee
-public class CKAttendee: CKAttribute {
+public class CKAttendee: CKComponent {
     
     /// 构建
     /// - Parameters:

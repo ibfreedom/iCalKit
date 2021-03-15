@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C74A2C0225F23A05002F2D6A /* CKAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74A2C0025F23A05002F2D6A /* CKAttribute.swift */; };
+		C74A2C0225F23A05002F2D6A /* CKComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74A2C0025F23A05002F2D6A /* CKComponent.swift */; };
 		C74A2C0325F23A05002F2D6A /* CKAttendee.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74A2C0125F23A05002F2D6A /* CKAttendee.swift */; };
 		C7A732B725F22BD30048B82C /* ATT00003.ics in Resources */ = {isa = PBXBuildFile; fileRef = C7A732B325F22BD20048B82C /* ATT00003.ics */; };
 		C7A732B925F22BD30048B82C /* ATT00002.ics in Resources */ = {isa = PBXBuildFile; fileRef = C7A732B525F22BD20048B82C /* ATT00002.ics */; };
@@ -84,7 +84,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C74A2C0025F23A05002F2D6A /* CKAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKAttribute.swift; sourceTree = "<group>"; };
+		C74A2C0025F23A05002F2D6A /* CKComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKComponent.swift; sourceTree = "<group>"; };
 		C74A2C0125F23A05002F2D6A /* CKAttendee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKAttendee.swift; sourceTree = "<group>"; };
 		C7A732B325F22BD20048B82C /* ATT00003.ics */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ATT00003.ics; sourceTree = "<group>"; };
 		C7A732B525F22BD20048B82C /* ATT00002.ics */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ATT00002.ics; sourceTree = "<group>"; };
@@ -157,13 +157,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C74A2BFF25F23A05002F2D6A /* Attributes */ = {
+		C71322B225FEF552000DB5BC /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				C74A2C0025F23A05002F2D6A /* CKAttribute.swift */,
+				C74A2C0025F23A05002F2D6A /* CKComponent.swift */,
 				C74A2C0125F23A05002F2D6A /* CKAttendee.swift */,
 			);
-			path = Attributes;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		C7EFE6D825F22B80003873D9 /* iCalKitDemo */ = {
@@ -262,7 +262,7 @@
 		OBJ_8 /* iCalKit */ = {
 			isa = PBXGroup;
 			children = (
-				C74A2BFF25F23A05002F2D6A /* Attributes */,
+				C71322B225FEF552000DB5BC /* Components */,
 				OBJ_9 /* CKAlarm.swift */,
 				OBJ_12 /* CKCalendar+Extensions.swift */,
 				OBJ_13 /* CKCalendar.swift */,
@@ -424,7 +424,7 @@
 				OBJ_41 /* CKCalendar+Extensions.swift in Sources */,
 				OBJ_42 /* CKCalendar.swift in Sources */,
 				OBJ_43 /* CKDaylight.swift in Sources */,
-				C74A2C0225F23A05002F2D6A /* CKAttribute.swift in Sources */,
+				C74A2C0225F23A05002F2D6A /* CKComponent.swift in Sources */,
 				OBJ_44 /* CKEvent.swift in Sources */,
 				OBJ_45 /* CKFreeBusy.swift in Sources */,
 				OBJ_46 /* CKJournal.swift in Sources */,

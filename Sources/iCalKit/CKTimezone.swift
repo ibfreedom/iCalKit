@@ -9,8 +9,8 @@ import Foundation
 
 extension CKTimezone {
     
-    /// AttributeKey
-    public enum AttributeKey: String, CaseIterable {
+    /// Name
+    public enum Name: String, CaseIterable {
         /**
          'tzid' is REQUIRED, but MUST NOT occur more than once. DTSTART / TZOFFSETTO / TZOFFSETFROM /
          */
@@ -29,7 +29,7 @@ extension CKTimezone {
     
 }
 
-extension CKTimezone.AttributeKey: CKRegularable {
+extension CKTimezone.Name: CKRegularable {
     /// String
     internal var name: String {
         return rawValue
@@ -54,8 +54,8 @@ public class CKTimezone {
     
     // MARK: - 公开属性
     
-    /// [CKAttribute]
-    public private(set) var attributes: [CKAttribute] = []
+    /// [CKComponent]
+    public private(set) var components: [CKComponent] = []
     /// [CKStandard]
     public private(set) var standards: [CKStandard] = []
     /// [CKDaylight]
@@ -77,8 +77,8 @@ public class CKTimezone {
         standards = try CKStandard.standards(from: &contents)
         // 2. get daylight
         daylights = try CKDaylight.daylights(from: &contents)
-        // 3. get attrs
-        attributes = try CKAttribute.attributes(from: &contents, withKeys: AttributeKey.allCases)
+        // 3. get components
+        components = try CKComponent.components(from: &contents, withKeys: Name.allCases)
     }
     
     /// get timezones from string
@@ -102,217 +102,197 @@ public class CKTimezone {
 
 // MARK: - 属性相关
 extension CKTimezone {
-    /// attrs for key
-    /// - Parameter key: AttributeKey
-    /// - Returns: [CKAttribute]
-    public func attributes(for key: AttributeKey) -> [CKAttribute] {
-        return lock.hub.safe {
-            return attributes.filter { $0.name.uppercased() == key.rawValue.uppercased() }
+    
+    /// components for name
+    /// - Parameter name: Name
+    /// - Returns: [CKComponent]
+    public func components(for name: Name) -> [CKComponent] {
+        return lock.hub.safe { [unowned self] in
+            return self.components.filter { $0.name.uppercased() == name.rawValue.uppercased() }
         }
     }
     
-    /// get first attribute for key
-    /// - Parameter key: AttributeKey
-    /// - Returns: CKAttribute?
-    public func attribute(for key: AttributeKey) -> CKAttribute? {
-        return attributes(for: key).first
+    /// component for name
+    /// - Parameter name: Name
+    /// - Returns: CKComponent?
+    public func component(for name: Name) -> CKComponent? {
+        return components(for: name).first
     }
     
-    /// attributes for name
+    /// components for name
     /// - Parameter name: String
-    /// - Returns: [CKAttribute]
-    public func attributes(for name: String) -> [CKAttribute] {
+    /// - Returns: [CKComponent]
+    public func components(for name: String) -> [CKComponent] {
         return lock.hub.safe {
-            return attributes.filter { $0.name.uppercased() == name.uppercased() }
+            return self.components.filter { $0.name.uppercased() == name.uppercased() }
         }
     }
     
-    /// attribute for name
+    /// component for name
     /// - Parameter name: String
-    /// - Returns: [CKAttribute]
-    public func attribute(for name: String) -> CKAttribute? {
-        return attributes(for: name).first
+    /// - Returns: CKComponent?
+    public func component(for name: String) -> CKComponent? {
+        return components(for: name).first
     }
     
-    /// set attrs
+    /// add components [CKComponent]
     /// - Parameters:
-    ///   - attrs: [CKAttribute]
-    ///   - key: AttributeKey
+    ///   - components: [CKComponent]
+    ///   - name: Name
     @discardableResult
-    public func set(_ attrs: [CKAttribute], for key: AttributeKey) -> Self {
-        // update name
-        attrs.forEach {
-            guard $0.name.isEmpty == true else { return }
-            $0.name = key.rawValue.uppercased()
-        }
-        return lock.hub.safe {
-            if let index = attributes.firstIndex(where: { $0.name.uppercased() == key.rawValue.uppercased() }) {
-                if key.mutable == true {
-                    attributes.removeAll(where: { $0.name.uppercased() == key.rawValue.uppercased() })
-                    attributes.insert(contentsOf: attrs, at: index)
+    public func add(_ components: [CKComponent], for name: Name) -> Self {
+        if let index = self.components.lastIndex(where: { $0.name.uppercased() == name.rawValue.uppercased() }) {
+           return lock.hub.safe {
+                if name.mutable == true {
+                    self.components.insert(contentsOf: components, at: index + 1)
                 } else {
-                    guard let attr = attrs.first else { return self }
-                    attributes[index] = attr
+                    guard let item = components.first else { return self }
+                    self.components[index] = item
                 }
-            } else {
-                if key.mutable == true {
-                    attributes.append(contentsOf: attrs)
-                } else {
-                    guard let attr = attrs.first else { return self }
-                    attributes.append(attr)
-                }
+                return self
             }
-            return self
-        }
-    }
-    
-    /// set attr for key
-    /// - Parameters:
-    ///   - attr: CKAttribute
-    ///   - key: AttributeKey
-    @discardableResult
-    public func set(_ attr: CKAttribute, for key: AttributeKey) -> Self {
-        return set([attr], for: key)
-    }
-    
-    /// set attrs
-    /// - Parameters:
-    ///   - attrs: [CKAttribute]
-    ///   - name: string
-    @discardableResult
-    public func set(_ attrs: [CKAttribute], for name: String) -> Self {
-        // update name
-        attrs.forEach {
-            guard $0.name.isEmpty == true else { return }
-            $0.name = name.uppercased()
-        }
-        return lock.hub.safe {
-            if let index = attributes.firstIndex(where: { $0.name.uppercased() == name.uppercased() }) {
-                if AttributeKey.init(rawValue: name)?.mutable == true || name.uppercased().hub.hasPrefix(["X-", "IANA-"]) == true {
-                    attributes.removeAll(where: { $0.name.uppercased() == name.uppercased() })
-                    attributes.insert(contentsOf: attrs, at: index)
+        } else {
+           return lock.hub.safe {
+                if name.mutable == true {
+                    self.components.append(contentsOf: components)
                 } else {
-                    guard let attr = attrs.first else { return self }
-                    attributes[index] = attr
+                    guard let item = components.first else { return self }
+                    self.components.append(item)
                 }
-            } else {
-                if AttributeKey.init(rawValue: name)?.mutable == true || name.uppercased().hub.hasPrefix(["X-", "IANA-"]) == true {
-                    attributes.append(contentsOf: attrs)
-                } else {
-                    guard let attr = attrs.first else { return self }
-                    attributes.append(attr)
-                }
+                return self
             }
-            return self
         }
     }
     
-    /// set attr for name
+    /// add component for name
     /// - Parameters:
-    ///   - attr: CKAttribute
+    ///   - component: CKComponent
+    ///   - name: Name
+    @discardableResult
+    public func add(_ component: CKComponent, for name: Name) -> Self {
+       return add([component], for: name)
+    }
+    
+    /// add components [CKComponent]
+    /// - Parameters:
+    ///   - components: [CKComponent]
     ///   - name: String
     @discardableResult
-    public func set(_ attr: CKAttribute, for name: String) -> Self {
-        return set([attr], for: name)
-    }
-    
-    /// add attrs
-    /// - Parameters:
-    ///   - attrs: [CKAttribute]
-    ///   - key: AttributeKey
-    @discardableResult
-    public func add(_ attrs: [CKAttribute], for key: AttributeKey) -> Self {
-        // update name
-        attrs.forEach {
-            guard $0.name.isEmpty == true else { return }
-            $0.name = key.rawValue.uppercased()
-        }
-        return lock.hub.safe {
-            if let index = attributes.lastIndex(where: { $0.name.uppercased() == key.rawValue.uppercased() }) {
-                if key.mutable == true {
-                    attributes.insert(contentsOf: attrs, at: index + 1)
+    public func add(_ components: [CKComponent], for name: String) -> Self {
+        if let index = self.components.lastIndex(where: { $0.name.uppercased() == name.uppercased() }) {
+            return lock.hub.safe {
+                if name.uppercased().hub.hasPrefix(["X-","IANA-"]) == true {
+                    self.components.insert(contentsOf: components, at: index + 1)
                 } else {
-                    guard let attr = attrs.first else { return self }
-                    attributes[index] = attr
+                    guard let item = components.first else { return self }
+                    self.components[index] = item
                 }
-            } else {
-                if key.mutable == true {
-                    attributes.append(contentsOf: attrs)
-                } else {
-                    guard let attr = attrs.first else { return self }
-                    attributes.append(attr)
-                }
+                return self
             }
-            return self
+        } else {
+            return lock.hub.safe {
+                if name.uppercased().hub.hasPrefix(["X-","IANA-"]) == true {
+                    self.components.append(contentsOf: components)
+                } else {
+                    guard let item = components.first else { return self }
+                    self.components.append(item)
+                }
+                return self
+            }
         }
     }
     
-    /// add attr for key
+    /// add component for name
     /// - Parameters:
-    ///   - attr: CKAttribute
-    ///   - key: AttributeKey
-    @discardableResult
-    public func add(_ attr: CKAttribute, for key: AttributeKey) -> Self {
-        return add([attr], for: key)
-    }
-    
-    /// add attrs
-    /// - Parameters:
-    ///   - attrs: [CKAttribute]
+    ///   - component: CKComponent
     ///   - name: String
     @discardableResult
-    public func add(_ attrs: [CKAttribute], for name: String) -> Self {
-        // update name
-        attrs.forEach {
-            guard $0.name.isEmpty == true else { return }
-            $0.name = name.uppercased()
-        }
-        return lock.hub.safe {
-            if let index = attributes.lastIndex(where: { $0.name.uppercased() == name.uppercased() }) {
-                if AttributeKey.init(rawValue: name)?.mutable == true || name.uppercased().hub.hasPrefix(["X-", "IANA-"]) == true {
-                    attributes.insert(contentsOf: attrs, at: index + 1)
-                } else {
-                    guard let attr = attrs.first else { return self }
-                    attributes[index] = attr
-                }
-            } else {
-                if AttributeKey.init(rawValue: name)?.mutable == true || name.uppercased().hub.hasPrefix(["X-", "IANA-"]) == true {
-                    attributes.append(contentsOf: attrs)
-                } else {
-                    guard let attr = attrs.first else { return self }
-                    attributes.append(attr)
-                }
-            }
-            return self
-        }
+    public func add(_ component: CKComponent, for name: String) -> Self {
+       return add([component], for: name)
     }
     
-    /// add attr for name
+    /// set components for name
     /// - Parameters:
-    ///   - attr: CKAttribute
+    ///   - components: [CKComponent]
+    ///   - name: Name
+    /// - Returns: Self
+    @discardableResult
+    public func set(_ components: [CKComponent], for name: Name) -> Self {
+        if let index = self.components.firstIndex(where: { $0.name.uppercased() == name.rawValue.uppercased() }) {
+            self.components.removeAll(keepingCapacity: true)
+            return lock.hub.safe {
+                if name.mutable == true {
+                    self.components.insert(contentsOf: components, at: index)
+                } else {
+                    guard let item = components.first else { return self }
+                    self.components.insert(item, at: index)
+                }
+                return self
+            }
+        } else {
+            self.components.removeAll(keepingCapacity: true)
+            return lock.hub.safe {
+                if name.mutable == true {
+                    self.components.append(contentsOf: components)
+                } else {
+                    guard let item = components.first else { return self }
+                    self.components.append(item)
+                }
+                return self
+            }
+        }
+    }
+    
+    /// set component for name
+    /// - Parameters:
+    ///   - component: CKComponent
+    ///   - name: Name
+    /// - Returns: Self
+    @discardableResult
+    public func set(_ component: CKComponent, for name: Name) -> Self {
+        return set([component], for: name)
+    }
+    
+    /// set components for name
+    /// - Parameters:
+    ///   - components: [CKComponent]
     ///   - name: String
+    /// - Returns: Self
     @discardableResult
-    public func add(_ attr: CKAttribute, for name: String) -> Self {
-        return add([attr], for: name)
-    }
-    
-    /// remove all attrs for key
-    @discardableResult
-    public func removeAll(for key: AttributeKey) -> Self {
-        return lock.hub.safe {
-            attributes.removeAll(where: { $0.name.uppercased() == key.rawValue.uppercased() })
-            return self
+    public func set(_ components: [CKComponent], for name: String) -> Self {
+        if let index = self.components.firstIndex(where: { $0.name.uppercased() == name.uppercased() }) {
+            self.components.removeAll(keepingCapacity: true)
+            return lock.hub.safe {
+                if name.uppercased().hub.hasPrefix(["X-","IANA-"]) == true {
+                    self.components.insert(contentsOf: components, at: index)
+                } else {
+                    guard let item = components.first else { return self }
+                    self.components.insert(item, at: index)
+                }
+                return self
+            }
+        } else {
+            self.components.removeAll(keepingCapacity: true)
+            return lock.hub.safe {
+                if name.uppercased().hub.hasPrefix(["X-","IANA-"]) == true {
+                    self.components.append(contentsOf: components)
+                } else {
+                    guard let item = components.first else { return self }
+                    self.components.append(item)
+                }
+                return self
+            }
         }
     }
     
-    /// remove all attrs for key
-    /// - Parameter key: String
+    /// set component for name
+    /// - Parameters:
+    ///   - component: CKComponent
+    ///   - name: String
+    /// - Returns: Self
     @discardableResult
-    public func removeAll(for name: String) -> Self {
-        return lock.hub.safe {
-            attributes.removeAll(where: { $0.name.uppercased() == name.uppercased() })
-            return self
-        }
+    public func set(_ component: CKComponent, for name: String) -> Self {
+        return set([component], for: name)
     }
 }
 
@@ -322,8 +302,8 @@ extension CKTimezone: CKTextable {
     /// ics format string
     public var text: String {
         var contents: String = ""
-        // attributes
-        for item in attributes {
+        // components
+        for item in components {
             contents += item.text
         }
         // standards
