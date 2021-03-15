@@ -41,8 +41,8 @@ public class CKSerialization {
         }
         value = value.replacingOccurrences(of: "\r\n", with: "\n")
         value = value.replacingOccurrences(of: "\n ", with: "")
-        value = value.replacingOccurrences(of: #"\\n"#, with: "")
-        value = value.replacingOccurrences(of: #"\\r"#, with: "")
+        value = value.replacingOccurrences(of: "\\n", with: "")
+        value = value.replacingOccurrences(of: "\\r", with: "")
         while value.contains("\n\n") {
             value = value.replacingOccurrences(of: "\n\n", with: "\n")
         }
