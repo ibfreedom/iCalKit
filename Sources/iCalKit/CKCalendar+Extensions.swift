@@ -76,15 +76,15 @@ extension CKCalendar {
 extension CKCalendar {
     
     /// date from CKComponent
-    /// - Parameter attribute: CKComponent
+    /// - Parameter component: CKComponent
     /// - Returns: Date
-    private func date(from attribute: CKComponent) -> Date? {
-        let contents = attribute.value.replacingOccurrences(of: "T", with: "", options: [.caseInsensitive], range: nil)
+    public func date(from component: CKComponent) -> Date? {
+        let contents = component.value.replacingOccurrences(of: "T", with: "", options: [.caseInsensitive], range: nil)
         if contents.hub.hasSuffix(["Z","z"]) == true {
             let dateFormatter: DateFormatter = .init()
             dateFormatter.dateFormat = "yyyyMMddHHmmssZ"
             return dateFormatter.date(from: contents)
-        } else if let TZID = attribute.value(for: "TZID") {
+        } else if let TZID = component.value(for: "TZID") {
             let dateFormatter: DateFormatter = .init()
             dateFormatter.timeZone = TZID.hub.toTimeZone()
             dateFormatter.dateFormat = "yyyyMMddHHmmss"
@@ -103,11 +103,11 @@ extension CKCalendar {
     }
     
     /// geo from CKComponent
-    /// - Parameter attribute: CKComponent
+    /// - Parameter component: CKComponent
     /// - Returns: CLLocation?
-    private func geo(from attribute: CKComponent) -> CLLocation? {
-        guard attribute.value.contains(";") == true else { return nil }
-        let components = attribute.value.components(separatedBy: ";")
+    public func geo(from component: CKComponent) -> CLLocation? {
+        guard component.value.contains(";") == true else { return nil }
+        let components = component.value.components(separatedBy: ";")
         let latitude: CLLocationDegrees = components[0].hub.doubleValue
         let longitude: CLLocationDegrees = components[1].hub.doubleValue
         return .init(latitude: latitude, longitude: longitude)
@@ -117,7 +117,7 @@ extension CKCalendar {
     /// - Parameter event: CKEvent
     /// - Throws: Error
     /// - Returns: Date
-    private func startDate(for event: CKEvent) throws -> Date {
+    public func startDate(for event: CKEvent) throws -> Date {
         if let attr = event.component(for: .DTSTART), let date = date(from: attr) {
             return date
         } else if let attr = event.component(for: .DTSTAMP), let date = date(from: attr) {
