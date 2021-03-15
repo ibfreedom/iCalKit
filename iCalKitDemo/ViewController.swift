@@ -20,6 +20,12 @@ class ViewController: UIViewController {
             for calendar in calendars {
                 print(calendar.text)
             }
+            
+            guard let value = calendars.first?.events.first?.component(for: .DESCRIPTION)?.value else { return }
+            guard let event = calendars.first?.events.first else { return }
+            
+            print(value)
+            
         } catch {
             print(error)
         }
