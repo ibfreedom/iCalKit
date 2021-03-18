@@ -34,7 +34,18 @@ public class CKSerialization {
     /// - Throws: Error
     /// - Returns: [CKCalendar]
     public static func calendars(with data: Data, encoding: Encoding = .utf8) throws -> [CKCalendar] {
-        guard var value = String.init(data: data, encoding: encoding) else { throw CKError.custom("Can not convert file to String ...") }
+        guard let value = String.init(data: data, encoding: encoding) else {
+            throw CKError.custom("Can not convert file to String ...")
+        }
+        return try caledars(with: value)
+    }
+    
+    /// calendars with texdt
+    /// - Parameter text: String
+    /// - Throws: Error
+    /// - Returns: [CKCalendar]
+    public static func caledars(with text: String) throws -> [CKCalendar] {
+        var value = text
         // 预处理
         while value.contains("  ") == true {
             value = value.replacingOccurrences(of: "  ", with: " ")
