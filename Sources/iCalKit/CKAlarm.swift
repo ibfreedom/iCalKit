@@ -211,7 +211,7 @@ extension CKAlarm {
     @discardableResult
     public func set(_ components: [CKComponent], for name: Name) -> Self {
         if let index = self.components.firstIndex(where: { $0.name.uppercased() == name.rawValue.uppercased() }) {
-            self.components.removeAll(keepingCapacity: true)
+            self.components.removeAll(where:  { $0.name.uppercased() == name.rawValue.uppercased() })
             return lock.hub.safe {
                 if name.mutable == true {
                     self.components.insert(contentsOf: components, at: index)
@@ -222,7 +222,7 @@ extension CKAlarm {
                 return self
             }
         } else {
-            self.components.removeAll(keepingCapacity: true)
+            self.components.removeAll(where:  { $0.name.uppercased() == name.rawValue.uppercased() })
             return lock.hub.safe {
                 if name.mutable == true {
                     self.components.append(contentsOf: components)
@@ -253,7 +253,7 @@ extension CKAlarm {
     @discardableResult
     public func set(_ components: [CKComponent], for name: String) -> Self {
         if let index = self.components.firstIndex(where: { $0.name.uppercased() == name.uppercased() }) {
-            self.components.removeAll(keepingCapacity: true)
+            self.components.removeAll(where:  { $0.name.uppercased() == name.uppercased() })
             return lock.hub.safe {
                 if name.uppercased().hub.hasPrefix(["X-","IANA-"]) == true {
                     self.components.insert(contentsOf: components, at: index)
@@ -264,7 +264,7 @@ extension CKAlarm {
                 return self
             }
         } else {
-            self.components.removeAll(keepingCapacity: true)
+            self.components.removeAll(where:  { $0.name.uppercased() == name.uppercased() })
             return lock.hub.safe {
                 if name.uppercased().hub.hasPrefix(["X-","IANA-"]) == true {
                     self.components.append(contentsOf: components)
