@@ -208,28 +208,15 @@ extension CKDaylight {
     /// - Returns: Self
     @discardableResult
     public func set(_ components: [CKComponent], for name: Name) -> Self {
-        if let index = self.components.firstIndex(where: { $0.name.uppercased() == name.rawValue.uppercased() }) {
-            self.components.removeAll(where:  { $0.name.uppercased() == name.rawValue.uppercased() })
-            return lock.hub.safe {
-                if name.mutable == true {
-                    self.components.insert(contentsOf: components, at: index)
-                } else {
-                    guard let item = components.first else { return self }
-                    self.components[index] = item
-                }
-                return self
+        return lock.hub.safe {
+            self.components.removeAll(where:  { $0.name.uppercased() == name.rawValue.uppercased()})
+            if name.mutable == true {
+                self.components.append(contentsOf: components)
+            } else {
+                guard let item = components.first else { return self }
+                self.components.append(item)
             }
-        } else {
-            self.components.removeAll(where:  { $0.name.uppercased() == name.rawValue.uppercased() })
-            return lock.hub.safe {
-                if name.mutable == true {
-                    self.components.append(contentsOf: components)
-                } else {
-                    guard let item = components.first else { return self }
-                    self.components.append(item)
-                }
-                return self
-            }
+            return self
         }
     }
     
@@ -250,28 +237,15 @@ extension CKDaylight {
     /// - Returns: Self
     @discardableResult
     public func set(_ components: [CKComponent], for name: String) -> Self {
-        if let index = self.components.firstIndex(where: { $0.name.uppercased() == name.uppercased() }) {
+        return lock.hub.safe {
             self.components.removeAll(where:  { $0.name.uppercased() == name.uppercased() })
-            return lock.hub.safe {
-                if name.uppercased().hub.hasPrefix(["X-","IANA-"]) == true {
-                    self.components.insert(contentsOf: components, at: index)
-                } else {
-                    guard let item = components.first else { return self }
-                    self.components[index] = item
-                }
-                return self
+            if name.uppercased().hub.hasPrefix(["X-","IANA-"]) == true {
+                self.components.append(contentsOf: components)
+            } else {
+                guard let item = components.first else { return self }
+                self.components.append(item)
             }
-        } else {
-            self.components.removeAll(where:  { $0.name.uppercased() == name.uppercased() })
-            return lock.hub.safe {
-                if name.uppercased().hub.hasPrefix(["X-","IANA-"]) == true {
-                    self.components.append(contentsOf: components)
-                } else {
-                    guard let item = components.first else { return self }
-                    self.components.append(item)
-                }
-                return self
-            }
+            return self
         }
     }
     
