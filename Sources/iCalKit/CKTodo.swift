@@ -274,7 +274,7 @@ extension CKTodo {
                     self.components.insert(contentsOf: components, at: index)
                 } else {
                     guard let item = components.first else { return self }
-                    self.components.insert(item, at: index)
+                    self.components[index] = item
                 }
                 return self
             }
@@ -316,7 +316,7 @@ extension CKTodo {
                     self.components.insert(contentsOf: components, at: index)
                 } else {
                     guard let item = components.first else { return self }
-                    self.components.insert(item, at: index)
+                    self.components[index] = item
                 }
                 return self
             }
