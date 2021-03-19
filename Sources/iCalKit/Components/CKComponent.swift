@@ -101,7 +101,7 @@ public class CKComponent {
     ///   - name: String
     ///   - value: String
     ///   - attrs: [String: String]
-    public init(name: String = "", value: String, attrs: [String: String] = [:]) {
+    public init(name: String, value: String, attrs: [String: String] = [:]) {
         self.name = name
         self.value = value
         self.attrs = attrs
