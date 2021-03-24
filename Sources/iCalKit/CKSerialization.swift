@@ -69,11 +69,12 @@ public class CKSerialization {
     /// - Returns: Data
     public static func data(with calendars: [CKCalendar], ecoding: Encoding = .utf8) throws -> Data {
         var contents: String = ""
-        for calendar in calendars {
+        for (offset, calendar) in calendars.enumerated() {
+            if offset > 0 {
+                contents += "\r\n"
+            }
             contents += calendar.text
-            contents += "\r\n"
         }
-        contents.removeLast(2)
         guard let data = contents.data(using: ecoding) else {
             throw CKError.custom("Can not convert to data ...")
         }

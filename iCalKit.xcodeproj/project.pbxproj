@@ -12,25 +12,7 @@
 		C7A732B725F22BD30048B82C /* ATT00003.ics in Resources */ = {isa = PBXBuildFile; fileRef = C7A732B325F22BD20048B82C /* ATT00003.ics */; };
 		C7A732B925F22BD30048B82C /* ATT00002.ics in Resources */ = {isa = PBXBuildFile; fileRef = C7A732B525F22BD20048B82C /* ATT00002.ics */; };
 		C7A732BA25F22BD30048B82C /* ATT00001.ics in Resources */ = {isa = PBXBuildFile; fileRef = C7A732B625F22BD30048B82C /* ATT00001.ics */; };
-		C7A732D725F22D030048B82C /* parserv2.ics in Resources */ = {isa = PBXBuildFile; fileRef = C7A732C725F22D020048B82C /* parserv2.ics */; };
-		C7A732D825F22D030048B82C /* utc_negative_zero.ics in Resources */ = {isa = PBXBuildFile; fileRef = C7A732C825F22D020048B82C /* utc_negative_zero.ics */; };
-		C7A732D925F22D030048B82C /* only_dtstart_date.ics in Resources */ = {isa = PBXBuildFile; fileRef = C7A732C925F22D020048B82C /* only_dtstart_date.ics */; };
-		C7A732DA25F22D030048B82C /* daily_recur.ics in Resources */ = {isa = PBXBuildFile; fileRef = C7A732CA25F22D030048B82C /* daily_recur.ics */; };
-		C7A732DB25F22D030048B82C /* forced_types.ics in Resources */ = {isa = PBXBuildFile; fileRef = C7A732CB25F22D030048B82C /* forced_types.ics */; };
-		C7A732DC25F22D030048B82C /* blank_description.ics in Resources */ = {isa = PBXBuildFile; fileRef = C7A732CC25F22D030048B82C /* blank_description.ics */; };
-		C7A732DD25F22D030048B82C /* day_long_recur_yearly.ics in Resources */ = {isa = PBXBuildFile; fileRef = C7A732CD25F22D030048B82C /* day_long_recur_yearly.ics */; };
-		C7A732DE25F22D030048B82C /* duration_instead_of_dtend.ics in Resources */ = {isa = PBXBuildFile; fileRef = C7A732CE25F22D030048B82C /* duration_instead_of_dtend.ics */; };
-		C7A732DF25F22D030048B82C /* only_dtstart_time.ics in Resources */ = {isa = PBXBuildFile; fileRef = C7A732CF25F22D030048B82C /* only_dtstart_time.ics */; };
-		C7A732E025F22D030048B82C /* google_birthday.ics in Resources */ = {isa = PBXBuildFile; fileRef = C7A732D025F22D030048B82C /* google_birthday.ics */; };
-		C7A732E125F22D030048B82C /* minimal.ics in Resources */ = {isa = PBXBuildFile; fileRef = C7A732D125F22D030048B82C /* minimal.ics */; };
-		C7A732E225F22D030048B82C /* blank_line_mid.ics in Resources */ = {isa = PBXBuildFile; fileRef = C7A732D225F22D030048B82C /* blank_line_mid.ics */; };
-		C7A732E325F22D030048B82C /* recur_instances.ics in Resources */ = {isa = PBXBuildFile; fileRef = C7A732D325F22D030048B82C /* recur_instances.ics */; };
-		C7A732E425F22D030048B82C /* multiple_rrules.ics in Resources */ = {isa = PBXBuildFile; fileRef = C7A732D425F22D030048B82C /* multiple_rrules.ics */; };
-		C7A732E525F22D030048B82C /* recur_instances_finite.ics in Resources */ = {isa = PBXBuildFile; fileRef = C7A732D525F22D030048B82C /* recur_instances_finite.ics */; };
-		C7A732E625F22D030048B82C /* blank_line_end.ics in Resources */ = {isa = PBXBuildFile; fileRef = C7A732D625F22D030048B82C /* blank_line_end.ics */; };
-		C7A732EC25F22D760048B82C /* inviteFormOutLook.ics in Resources */ = {isa = PBXBuildFile; fileRef = C7A732E925F22D760048B82C /* inviteFormOutLook.ics */; };
 		C7A732ED25F22D760048B82C /* ATT1614757615086.ics in Resources */ = {isa = PBXBuildFile; fileRef = C7A732EA25F22D760048B82C /* ATT1614757615086.ics */; };
-		C7A732EE25F22D760048B82C /* invitegoogleres.ics in Resources */ = {isa = PBXBuildFile; fileRef = C7A732EB25F22D760048B82C /* invitegoogleres.ics */; };
 		C7EFE6DA25F22B80003873D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EFE6D925F22B80003873D9 /* AppDelegate.swift */; };
 		C7EFE6DC25F22B80003873D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EFE6DB25F22B80003873D9 /* SceneDelegate.swift */; };
 		C7EFE6DE25F22B80003873D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EFE6DD25F22B80003873D9 /* ViewController.swift */; };
@@ -89,25 +71,7 @@
 		C7A732B325F22BD20048B82C /* ATT00003.ics */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ATT00003.ics; sourceTree = "<group>"; };
 		C7A732B525F22BD20048B82C /* ATT00002.ics */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ATT00002.ics; sourceTree = "<group>"; };
 		C7A732B625F22BD30048B82C /* ATT00001.ics */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ATT00001.ics; sourceTree = "<group>"; };
-		C7A732C725F22D020048B82C /* parserv2.ics */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = parserv2.ics; sourceTree = "<group>"; };
-		C7A732C825F22D020048B82C /* utc_negative_zero.ics */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = utc_negative_zero.ics; sourceTree = "<group>"; };
-		C7A732C925F22D020048B82C /* only_dtstart_date.ics */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = only_dtstart_date.ics; sourceTree = "<group>"; };
-		C7A732CA25F22D030048B82C /* daily_recur.ics */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = daily_recur.ics; sourceTree = "<group>"; };
-		C7A732CB25F22D030048B82C /* forced_types.ics */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = forced_types.ics; sourceTree = "<group>"; };
-		C7A732CC25F22D030048B82C /* blank_description.ics */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = blank_description.ics; sourceTree = "<group>"; };
-		C7A732CD25F22D030048B82C /* day_long_recur_yearly.ics */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = day_long_recur_yearly.ics; sourceTree = "<group>"; };
-		C7A732CE25F22D030048B82C /* duration_instead_of_dtend.ics */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = duration_instead_of_dtend.ics; sourceTree = "<group>"; };
-		C7A732CF25F22D030048B82C /* only_dtstart_time.ics */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = only_dtstart_time.ics; sourceTree = "<group>"; };
-		C7A732D025F22D030048B82C /* google_birthday.ics */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = google_birthday.ics; sourceTree = "<group>"; };
-		C7A732D125F22D030048B82C /* minimal.ics */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = minimal.ics; sourceTree = "<group>"; };
-		C7A732D225F22D030048B82C /* blank_line_mid.ics */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = blank_line_mid.ics; sourceTree = "<group>"; };
-		C7A732D325F22D030048B82C /* recur_instances.ics */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = recur_instances.ics; sourceTree = "<group>"; };
-		C7A732D425F22D030048B82C /* multiple_rrules.ics */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = multiple_rrules.ics; sourceTree = "<group>"; };
-		C7A732D525F22D030048B82C /* recur_instances_finite.ics */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = recur_instances_finite.ics; sourceTree = "<group>"; };
-		C7A732D625F22D030048B82C /* blank_line_end.ics */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = blank_line_end.ics; sourceTree = "<group>"; };
-		C7A732E925F22D760048B82C /* inviteFormOutLook.ics */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = inviteFormOutLook.ics; sourceTree = "<group>"; };
 		C7A732EA25F22D760048B82C /* ATT1614757615086.ics */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ATT1614757615086.ics; sourceTree = "<group>"; };
-		C7A732EB25F22D760048B82C /* invitegoogleres.ics */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = invitegoogleres.ics; sourceTree = "<group>"; };
 		C7EFE6D725F22B80003873D9 /* iCalKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCalKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7EFE6D925F22B80003873D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7EFE6DB25F22B80003873D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -175,24 +139,6 @@
 				C7A732B525F22BD20048B82C /* ATT00002.ics */,
 				C7A732B325F22BD20048B82C /* ATT00003.ics */,
 				C7A732EA25F22D760048B82C /* ATT1614757615086.ics */,
-				C7A732E925F22D760048B82C /* inviteFormOutLook.ics */,
-				C7A732EB25F22D760048B82C /* invitegoogleres.ics */,
-				C7A732CC25F22D030048B82C /* blank_description.ics */,
-				C7A732D625F22D030048B82C /* blank_line_end.ics */,
-				C7A732D225F22D030048B82C /* blank_line_mid.ics */,
-				C7A732CA25F22D030048B82C /* daily_recur.ics */,
-				C7A732CD25F22D030048B82C /* day_long_recur_yearly.ics */,
-				C7A732CE25F22D030048B82C /* duration_instead_of_dtend.ics */,
-				C7A732CB25F22D030048B82C /* forced_types.ics */,
-				C7A732D025F22D030048B82C /* google_birthday.ics */,
-				C7A732D125F22D030048B82C /* minimal.ics */,
-				C7A732D425F22D030048B82C /* multiple_rrules.ics */,
-				C7A732C925F22D020048B82C /* only_dtstart_date.ics */,
-				C7A732CF25F22D030048B82C /* only_dtstart_time.ics */,
-				C7A732C725F22D020048B82C /* parserv2.ics */,
-				C7A732D525F22D030048B82C /* recur_instances_finite.ics */,
-				C7A732D325F22D030048B82C /* recur_instances.ics */,
-				C7A732C825F22D020048B82C /* utc_negative_zero.ics */,
 				C7A732B625F22BD30048B82C /* ATT00001.ics */,
 				C7EFE6DF25F22B80003873D9 /* Main.storyboard */,
 				C7EFE6E225F22B80003873D9 /* Assets.xcassets */,
@@ -375,30 +321,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7A732B925F22BD30048B82C /* ATT00002.ics in Resources */,
-				C7A732DA25F22D030048B82C /* daily_recur.ics in Resources */,
 				C7EFE6E625F22B80003873D9 /* LaunchScreen.storyboard in Resources */,
-				C7A732E025F22D030048B82C /* google_birthday.ics in Resources */,
-				C7A732DF25F22D030048B82C /* only_dtstart_time.ics in Resources */,
 				C7A732B725F22BD30048B82C /* ATT00003.ics in Resources */,
-				C7A732E525F22D030048B82C /* recur_instances_finite.ics in Resources */,
 				C7EFE6E325F22B80003873D9 /* Assets.xcassets in Resources */,
-				C7A732E225F22D030048B82C /* blank_line_mid.ics in Resources */,
-				C7A732E125F22D030048B82C /* minimal.ics in Resources */,
 				C7EFE6E125F22B80003873D9 /* Main.storyboard in Resources */,
 				C7A732ED25F22D760048B82C /* ATT1614757615086.ics in Resources */,
-				C7A732D725F22D030048B82C /* parserv2.ics in Resources */,
-				C7A732D925F22D030048B82C /* only_dtstart_date.ics in Resources */,
-				C7A732EC25F22D760048B82C /* inviteFormOutLook.ics in Resources */,
 				C7A732BA25F22BD30048B82C /* ATT00001.ics in Resources */,
-				C7A732E325F22D030048B82C /* recur_instances.ics in Resources */,
-				C7A732EE25F22D760048B82C /* invitegoogleres.ics in Resources */,
-				C7A732DC25F22D030048B82C /* blank_description.ics in Resources */,
-				C7A732DD25F22D030048B82C /* day_long_recur_yearly.ics in Resources */,
-				C7A732E425F22D030048B82C /* multiple_rrules.ics in Resources */,
-				C7A732E625F22D030048B82C /* blank_line_end.ics in Resources */,
-				C7A732DE25F22D030048B82C /* duration_instead_of_dtend.ics in Resources */,
-				C7A732D825F22D030048B82C /* utc_negative_zero.ics in Resources */,
-				C7A732DB25F22D030048B82C /* forced_types.ics in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
