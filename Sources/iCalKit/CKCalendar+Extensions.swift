@@ -80,25 +80,25 @@ extension CKCalendar {
     /// - Returns: Date
     public func date(from component: CKComponent) -> Date? {
         let contents = component.value.replacingOccurrences(of: "T", with: "", options: [.caseInsensitive], range: nil)
+        let dateFormatter: DateFormatter = .init()
+        let formats: [String] = [
+            "yyyyMMddHHmmss",
+            "yyyyMMddHHmm",
+            "yyyyMMddHH",
+            "yyyyMMdd"
+        ]
         if contents.hub.hasSuffix(["Z","z"]) == true {
-            let dateFormatter: DateFormatter = .init()
-            dateFormatter.dateFormat = "yyyyMMddHHmmssZ"
-            return dateFormatter.date(from: contents)
+            let formats = formats.map { $0 + "Z" }
+            return dateFormatter.hub.date(from: contents, supports: formats)
         } else if let TZID = component.value(for: "TZID") {
-            let dateFormatter: DateFormatter = .init()
             dateFormatter.timeZone = TZID.hub.toTimeZone()
-            dateFormatter.dateFormat = "yyyyMMddHHmmss"
-            return dateFormatter.date(from: contents)
+            return dateFormatter.hub.date(from: contents, supports: formats)
         } else if timezones.isEmpty == false, let TZID = timezones.first?.component(for: .TZID)?.value  {
-            let dateFormatter: DateFormatter = .init()
             dateFormatter.timeZone = TZID.hub.toTimeZone()
-            dateFormatter.dateFormat = "yyyyMMddHHmmss"
-            return dateFormatter.date(from: contents)
+            return dateFormatter.hub.date(from: contents, supports: formats)
         } else {
-            let dateFormatter: DateFormatter = .init()
             dateFormatter.timeZone = "Asia/Shanghai".hub.toTimeZone()
-            dateFormatter.dateFormat = "yyyyMMddHHmmss"
-            return dateFormatter.date(from: contents)
+            return dateFormatter.hub.date(from: contents, supports: formats)
         }
     }
     

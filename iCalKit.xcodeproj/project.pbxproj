@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C74A2C0225F23A05002F2D6A /* CKComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74A2C0025F23A05002F2D6A /* CKComponent.swift */; };
 		C74A2C0325F23A05002F2D6A /* CKAttendee.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74A2C0125F23A05002F2D6A /* CKAttendee.swift */; };
+		C770274F260D62DC002432F0 /* DateFormatter+Hub.swift in Sources */ = {isa = PBXBuildFile; fileRef = C770274E260D62DC002432F0 /* DateFormatter+Hub.swift */; };
 		C7A732B725F22BD30048B82C /* ATT00003.ics in Resources */ = {isa = PBXBuildFile; fileRef = C7A732B325F22BD20048B82C /* ATT00003.ics */; };
 		C7A732B925F22BD30048B82C /* ATT00002.ics in Resources */ = {isa = PBXBuildFile; fileRef = C7A732B525F22BD20048B82C /* ATT00002.ics */; };
 		C7A732BA25F22BD30048B82C /* ATT00001.ics in Resources */ = {isa = PBXBuildFile; fileRef = C7A732B625F22BD30048B82C /* ATT00001.ics */; };
@@ -68,6 +69,7 @@
 /* Begin PBXFileReference section */
 		C74A2C0025F23A05002F2D6A /* CKComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKComponent.swift; sourceTree = "<group>"; };
 		C74A2C0125F23A05002F2D6A /* CKAttendee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKAttendee.swift; sourceTree = "<group>"; };
+		C770274E260D62DC002432F0 /* DateFormatter+Hub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Hub.swift"; sourceTree = "<group>"; };
 		C7A732B325F22BD20048B82C /* ATT00003.ics */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ATT00003.ics; sourceTree = "<group>"; };
 		C7A732B525F22BD20048B82C /* ATT00002.ics */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ATT00002.ics; sourceTree = "<group>"; };
 		C7A732B625F22BD30048B82C /* ATT00001.ics */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ATT00001.ics; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				OBJ_26 /* Compatible.swift */,
 				OBJ_27 /* NSLock+Hub.swift */,
 				OBJ_28 /* String+Hub.swift */,
+				C770274E260D62DC002432F0 /* DateFormatter+Hub.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				OBJ_53 /* CKTextable.swift in Sources */,
 				OBJ_54 /* Compatible.swift in Sources */,
 				OBJ_55 /* NSLock+Hub.swift in Sources */,
+				C770274F260D62DC002432F0 /* DateFormatter+Hub.swift in Sources */,
 				OBJ_56 /* String+Hub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
