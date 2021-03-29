@@ -63,22 +63,14 @@ public class CKComponent {
                 throw CKError.custom("Can not get attribute value from string")
             }
             do {
-//                let pattern: String = #"(?<=:)([\s\S]*?)(?=\r\n)"#
-//                let reg = try NSRegularExpression.init(pattern: pattern, options: [.caseInsensitive])
-//                guard let result = reg.firstMatch(in: component, options: [], range: component.hub.range) else {
-//                    throw CKError.custom("Can not get attribute value from string")
-//                }
-//                // set value
-//                value = component.hub.substring(with: result.range)
-//                // update component
-//                component = component.hub.substring(to: result.range.location - 1)
-                let pattern: String = #"(:mailto:)([\s\S]*?)(?=\r\n)"#
+                let pattern: String = #"(:mailto:)([\s\S]*?)(\r\n)"#
                 let reg = try NSRegularExpression.init(pattern: pattern, options: [.caseInsensitive])
                 if let result = reg.firstMatch(in: component, options: [], range: component.hub.range) {
                     value = component.hub.substring(with: result.range)
                         .replacingOccurrences(of: ":mailto:", with: "MAILTO:", options: [.caseInsensitive], range: nil)
+                        .replacingOccurrences(of: "\r\n", with: "")
                     // update component
-                    component = component.hub.substring(with: result.range)
+                    component = component.hub.remove(with: result.range)
                 } else {
                     component = component.replacingOccurrences(of: "\r\n", with: "")
                     let components = component.components(separatedBy: ":")
