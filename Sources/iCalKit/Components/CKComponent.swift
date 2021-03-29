@@ -80,6 +80,7 @@ public class CKComponent {
                     // update component
                     component = component.hub.substring(with: result.range)
                 } else {
+                    component = component.replacingOccurrences(of: "\r\n", with: "")
                     let components = component.components(separatedBy: ":")
                     value = components.last ?? ""
                     component = components.dropLast().joined(separator: ":")
